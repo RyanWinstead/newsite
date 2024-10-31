@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrolling Collage Portfolio</title>
+    <!-- Navigation Bar -->
+    <nav style="position: absolute; top: 10px; right: 10px;">
+        <ul style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0;">
+            <li><a href="#section1" style="text-decoration: none; color: black;">Home</a></li>
+            <li><a href="#section2" style="text-decoration: none; color: black;">Portfolio</a></li>
+            <li><a href="#section3" style="text-decoration: none; color: black;">Contact</a></li>
+        </ul>
+    </nav>
+
     <style>
         /* Reset margin and padding */
         * {
@@ -15,7 +24,7 @@
         /* Body styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #3c6bc9, #279b4a);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -48,66 +57,51 @@
             max-width: 800px;
         }
 
-        /* Collage items */
-        .collage-item {
-            position: relative;
-            width: 180px;
-            height: 250px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #ccc;
-            text-align: center;
+        /* Image styling */
+        .gallery-image {
+            max-width: 250px;      /* Adjust to your preferred max width */
+            max-height: 250px;     /* Adjust to your preferred max height */
+            width: auto;            /* Maintain original aspect ratio */
+            height: auto;           /* Maintain original aspect ratio */
+            object-fit: contain;    /* Ensure the whole image is visible */
+            display: block;         /* Ensures images are treated as block elements */
+            margin: 0 auto;         /* Centers the image */
+            transition: transform 0.2s; /* Smooth scaling effect */
         }
 
         /* Overlapping styling */
-        .collage-item:nth-child(odd) {
-            transform: translateY(20px);
+        .gallery-image:nth-child(odd) {
+            transform: translateY(10px); /* Adjust as needed for a staggered effect */
         }
 
         /* Placeholder text styling */
-        .collage-item a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
+        .gallery-image:hover {
+            transform: scale(1.05);  /* Slightly enlarge image on hover */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Your Name</h1>
+        <h1>Ryan Winstead</h1>
         <p>A brief introduction about your work.</p>
     </header>
 
     <!-- Collage container -->
     <div class="collage-container">
-        <div class="collage-item">
-            <a href="#">Poster 1</a>
-        </div>
-        <div class="collage-item">
-            <a href="#">Typography 1</a>
-        </div>
-        <div class="collage-item">
-            <a href="#">Poster 2</a>
-        </div>
-        <div class="collage-item">
-            <a href="#">Typography 2</a>
-        </div>
-        <div class="collage-item">
-            <a href="#">Poster 3</a>
-        </div>
-        <div class="collage-item">
-            <a href="#">Typography 3</a>
-        </div>
-        <div class="collage-item">
-            <a href="#">Poster 4</a>
-        </div>
-        <div class="collage-item">
-            <a href="#">Typography 4</a>
-        </div>
+        <a href="#">
+            <img src="assets/aware 1.png" alt="Poster 1" class="gallery-image"/>
+        </a>
+        <a href="#">
+            <img src="assets/Candleraze.png" alt="Poster 2" class="gallery-image"/>
+        </a>
+        <a href="#">
+            <img src="assets/Watch.png" alt="Poster 3" class="gallery-image"/>
+        </a>
+        <!-- Additional images can be added here -->
+        <a href="#">
+            <img src="assets/inspo.png" alt="Poster 4" class="gallery-image"/>
+        </a>
     </div>
 
 </body>
