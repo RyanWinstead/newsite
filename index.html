@@ -40,6 +40,8 @@
         h1 {
             font-size: 2rem;
             margin-bottom: 10px;
+            transition: transform 0.2s;
+            cursor: pointer;
         }
 
         p {
@@ -78,6 +80,11 @@
         .gallery-image:hover {
             transform: scale(1.05);  /* Slightly enlarge image on hover */
         }
+        .changed-font {
+            font-family:  Courier, monospace, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Change to your desired font */
+            transition: font-family 0.2s; /* Smooth transition effect */
+}
+
     </style>
 </head>
 <body>
@@ -103,6 +110,12 @@
             <img src="assets/inspo.png" alt="Poster 4" class="gallery-image"/>
         </a>
     </div>
-
+    <script>
+        const header = document.querySelector('h1');
+    
+        header.addEventListener('click', () => {
+            header.classList.toggle('changed-font');
+        });
+    </script>
 </body>
 </html>
