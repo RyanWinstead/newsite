@@ -80,10 +80,19 @@
         .gallery-image:hover {
             transform: scale(1.05);  /* Slightly enlarge image on hover */
         }
-        .changed-font {
-            font-family:  Courier, monospace, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Change to your desired font */
-            transition: font-family 0.2s; /* Smooth transition effect */
-}
+        
+        .font-1 {
+            font-family: 'Courier New', monospace;
+        }
+
+        .font-2 {
+            font-family: 'Times New Roman', serif;
+        }
+
+        .font-3 {
+            font-family: 'Impact', sans-serif;
+        }
+
 
     </style>
 </head>
@@ -112,10 +121,20 @@
     </div>
     <script>
         const header = document.querySelector('h1');
+        const fontClasses = ['font-1', 'font-2', 'font-3'];
+        let fontIndex = 0;
     
         header.addEventListener('click', () => {
-            header.classList.toggle('changed-font');
+            // Remove the current font class
+            header.classList.remove(fontClasses[fontIndex]);
+            
+            // Increment the font index, looping back to the start if necessary
+            fontIndex = (fontIndex + 1) % fontClasses.length;
+            
+            // Add the new font class
+            header.classList.add(fontClasses[fontIndex]);
         });
     </script>
+    
 </body>
 </html>
