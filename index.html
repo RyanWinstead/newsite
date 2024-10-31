@@ -40,8 +40,8 @@
         h1 {
             font-size: 2rem;
             margin-bottom: 10px;
-            transition: transform 0.2s;
             cursor: pointer;
+            transition: transform 0.2s;
         }
 
         p {
@@ -51,49 +51,43 @@
 
         /* Collage container */
         .collage-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
             gap: 15px;
             width: 100%;
             max-width: 800px;
         }
 
+        /* Transparent image container */
+        .collage-item {
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.3); /* Optional: light border */
+            padding: 10px;
+            border-radius: 8px; /* Rounded corners */
+            transition: transform 0.2s;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
         /* Image styling */
         .gallery-image {
-            max-width: 250px;      /* Adjust to your preferred max width */
-            max-height: 250px;     /* Adjust to your preferred max height */
-            width: auto;            /* Maintain original aspect ratio */
-            height: auto;           /* Maintain original aspect ratio */
-            object-fit: contain;    /* Ensure the whole image is visible */
-            display: block;         /* Ensures images are treated as block elements */
-            margin: 0 auto;         /* Centers the image */
-            transition: transform 0.2s; /* Smooth scaling effect */
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Ensure the whole image is visible */
+            display: block;
         }
 
-        /* Overlapping styling */
-        .gallery-image:nth-child(odd) {
-            transform: translateY(10px); /* Adjust as needed for a staggered effect */
-        }
-
-        /* Placeholder text styling */
-        .gallery-image:hover {
-            transform: scale(1.05);  /* Slightly enlarge image on hover */
-        }
-        
-        .font-1 {
-            font-family: 'Courier New', monospace;
-        }
-
-        .font-2 {
-            font-family: 'Times New Roman', serif;
-        }
-
-        .font-3 {
-            font-family: 'Impact', sans-serif;
-        }
-
-
+        /* Font styles for cycling */
+        .font-1 { font-family: 'Courier New', monospace; }
+        .font-2 { font-family: 'Times New Roman', serif; }
+        .font-3 { font-family: 'Impact', sans-serif; }
     </style>
 </head>
 <body>
@@ -103,22 +97,31 @@
         <p>A brief introduction about your work.</p>
     </header>
 
-    <!-- Collage container -->
+    <!-- Collage container with 3x3 layout -->
     <div class="collage-container">
-        <a href="#">
-            <img src="assets/aware 1.png" alt="Poster 1" class="gallery-image"/>
-        </a>
-        <a href="#">
-            <img src="assets/Candleraze.png" alt="Poster 2" class="gallery-image"/>
-        </a>
-        <a href="#">
-            <img src="assets/Watch.png" alt="Poster 3" class="gallery-image"/>
-        </a>
-        <!-- Additional images can be added here -->
-        <a href="#">
-            <img src="assets/inspo.png" alt="Poster 4" class="gallery-image"/>
-        </a>
+        <div class="collage-item">
+            <a href="#">
+                <img src="assets/aware 1.png" alt="Poster 1" class="gallery-image"/>
+            </a>
+        </div>
+        <div class="collage-item">
+            <a href="#">
+                <img src="assets/Candleraze.png" alt="Poster 2" class="gallery-image"/>
+            </a>
+        </div>
+        <div class="collage-item">
+            <a href="#">
+                <img src="assets/Watch.png" alt="Poster 3" class="gallery-image"/>
+            </a>
+        </div>
+        <div class="collage-item">
+            <a href="#">
+                <img src="assets/inspo.png" alt="Poster 4" class="gallery-image"/>
+            </a>
+        </div>
+        <!-- Add more collage items as needed -->
     </div>
+
     <script>
         const header = document.querySelector('h1');
         const fontClasses = ['font-1', 'font-2', 'font-3'];
