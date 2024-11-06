@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrolling Collage Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!--Fonts!-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Questrial&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tenali+Ramakrishna&family=Yrsa:ital,wght@0,300..700;1,300..700&family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+
+    
     <!-- Navigation Bar -->
-    <nav style="position: absolute; top: 10px; right: 10px;">
+    <nav>
         <ul style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0;">
             <li><a href="#section1" style="text-decoration: none; color: black;">Home</a></li>
             <li><a href="#section2" style="text-decoration: none; color: black;">Portfolio</a></li>
@@ -13,92 +21,19 @@
         </ul>
     </nav>
 
-    <style>
-        /* Reset margin and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        /* Body styling */
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #3c6bc9, #279b4a);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
 
-        /* Header styling */
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #555;
-        }
-
-        /* Collage container */
-        .collage-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns */
-            gap: 15px;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        /* Transparent image container */
-        .collage-item {
-            background-color: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid rgba(255, 255, 255, 0.3); /* Optional: light border */
-            padding: 10px;
-            border-radius: 8px; /* Rounded corners */
-            transition: transform 0.2s;
-        }
-
-        .collage-item:hover {
-            transform: scale(1.05); /* Slightly enlarge on hover */
-        }
-
-        /* Image styling */
-        .gallery-image {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain; /* Ensure the whole image is visible */
-            display: block;
-        }
-
-        /* Font styles for cycling */
-        .font-1 { font-family: 'Courier New', monospace; }
-        .font-2 { font-family: 'Times New Roman', serif; }
-        .font-3 { font-family: 'Impact', sans-serif; }
-    </style>
 </head>
 <body>
 
     <header>
         <h1>Ryan Winstead</h1>
-        <p>A brief introduction about your work.</p>
+        <p>Hello!</p>
+        <p>Welcome to my Art page.</p>
+        <p>Web developed by me!</p>
     </header>
 
     <!-- Collage container with 3x3 layout -->
-    <div class="collage-container">
+    <containers class="collage-container">
         <div class="collage-item">
             <a href="#">
                 <img src="assets/aware 1.png" alt="Poster 1" class="gallery-image"/>
@@ -130,7 +65,7 @@
             </a>
         </div>
         <!-- Add more collage items as needed -->
-    </div>
+    </containers>
 
     <script>
         const header = document.querySelector('h1');

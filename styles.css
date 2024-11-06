@@ -1,0 +1,92 @@
+
+nav{
+    font-family: "Tenali Ramakrishna", serif;
+    position: absolute; 
+    top: 10px; 
+    right: 10px;
+    
+}
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header p{
+    font-family: "Ysabeau Infant", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Body styling */
+body {
+    /*font-family: Arial, sans-serif;*/
+    background: linear-gradient(to right, #3c6bc9, #279b4a);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Collage container */
+.collage-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Transparent image container */
+.collage-item {
+    background-color: rgb(196, 196, 196);
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Optional: light border */
+    padding: 10px;
+    border-radius: 4px; /* Rounded corners */
+    transition: transform 0.2s;
+}
+
+.collage-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Image styling */
+.gallery-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Ensure the whole image is visible */
+    display: block;
+}
+
+/* Font styles for cycling */
+.font-1 { font-family: "Rubik", serif; }
+.font-2 { font-family: "Questrial", serif; }
+.font-3 { font-family: "Tenali Ramakrishna", serif; }
