@@ -49,39 +49,29 @@ p {
     color: #555;
 }
 
-/* Collage container */
 .collage-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 2px;
+    column-count: 3; /* Number of columns */
+    column-gap: 8px; /* Gap between columns */
     width: 50%;
     max-width: 800px;
 }
 
-/* Transparent image container */
 .collage-item {
-    background-color: rgb(196, 196, 196);
-    display: flex;
-    align-items: stretch; /* Stretch container to fit image height */
-    justify-content: center;
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Optional: light border */
-    padding: 1px;
-    border-radius: 2px; /* Rounded corners */
-    transition: transform 0.2s;
+    display: inline-block;
+    margin-bottom: 8px; /* Gap between items vertically */
+    width: 100%;
+    break-inside: avoid; /* Prevents images from splitting across columns */
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .collage-item:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
-
-/* Image styling */
-.gallery-image {
-    max-width: 100%; /* Ensures image fits within container width */
-    height: auto; /* Allows image to adjust height proportionally */
-    object-fit: contain; /* Ensures the whole image is visible */
-    display: block;
-}
-
 
 /* Font styles for cycling */
 .font-1 { font-family: "Rubik", serif; }
