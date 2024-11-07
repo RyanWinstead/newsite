@@ -28,7 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 0px;
 }
 
 /* Header styling */
@@ -53,8 +53,8 @@ p {
 .collage-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 15px;
-    width: 100%;
+    gap: 2px;
+    width: 50%;
     max-width: 800px;
 }
 
@@ -62,13 +62,11 @@ p {
 .collage-item {
     background-color: rgb(196, 196, 196);
     display: flex;
-    justify-content: center;
-    gap: 0px;
-    align-items: center;
+    align-items: stretch; /* Stretch container to fit image height */
     justify-content: center;
     border: 2px solid rgba(255, 255, 255, 0.3); /* Optional: light border */
-    padding: 10px;
-    border-radius: 4px; /* Rounded corners */
+    padding: 1px;
+    border-radius: 2px; /* Rounded corners */
     transition: transform 0.2s;
 }
 
@@ -78,13 +76,12 @@ p {
 
 /* Image styling */
 .gallery-image {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain; /* Ensure the whole image is visible */
+    max-width: 100%; /* Ensures image fits within container width */
+    height: auto; /* Allows image to adjust height proportionally */
+    object-fit: contain; /* Ensures the whole image is visible */
     display: block;
 }
+
 
 /* Font styles for cycling */
 .font-1 { font-family: "Rubik", serif; }
